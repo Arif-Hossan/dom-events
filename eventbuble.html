@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body>
+    <!-- div#container>h1+ul#myList>li.item*5>lorem3 -->
+<div id="container">
+    <h1>My list</h1>
+    <ul id="myList">
+        <li id = "first" class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Esse, tempora numquam!</li>
+        <li class="item">Neque, harum laudantium?</li>
+        <li class="item">Vel, dolor quae!</li>
+        <li class="item">Cumque, cum dolores!</li>
+    </ul>
+</div>
+
+<script>
+    document.getElementById('first').addEventListener('click',function(){
+        console.log('first item clicked');
+        event.stopPropagation();//stop bubble up link events
+    })
+    document.getElementById('myList').addEventListener('click',function(){
+        console.log('List clicked')
+    })
+    document.getElementById('container').addEventListener('click',function(){
+        console.log('container clicked')
+    })
+</script>
+</body>
+</html>

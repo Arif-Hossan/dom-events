@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Dom</title>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <h3>Exploring Dom</h3>
+        <!-- <p id="first">This is first paragraph</p>
+            <p>This is second paragraph</p>
+        article*3>h3{article-$}+p.author{author-$}+p.description>lorem30-->
+        <article id="first-article">
+          <h3>article-1</h3>
+          <p class="author">author-1</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+            quidem corrupti ullam perspiciatis quisquam magnam doloribus quia
+            aspernatur totam. Harum ea cumque aut obcaecati magni, fugit commodi
+            hic delectus placeat!
+          </p>
+        </article>
+        <article>
+          <h3>article-2</h3>
+          <p class="author">author-2</p>
+          <p class="description">
+            Magni aspernatur minima possimus ducimus blanditiis perspiciatis
+            veniam eos ad in? Veniam similique modi placeat labore temporibus
+            dicta odit nesciunt, ipsa assumenda dolorem, officia sequi, id dolor
+            ut? Quam, sit.
+          </p>
+        </article>
+        <article>
+          <h3>article-3</h3>
+          <p class="author">author-3</p>
+          <p class="description">
+            Tempora dolores culpa deleniti quae voluptas nesciunt aperiam qui,
+            nihil doloribus recusandae quisquam neque porro deserunt reiciendis
+            adipisci laborum corporis sapiente aliquam, similique suscipit.
+            Vitae ipsam iure rem incidunt consequatur?
+          </p>
+        </article>
+
+        <article>
+          <h3>Gift List</h3>
+          <ul id="gift-item">
+            <li>gift item-1</li>
+            <li>gift item-2</li>
+            <li>gift item-3</li>
+            <li>gift item-4</li>
+            <li>gift item-5</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <script>
+      let first = document.getElementById("first-article");
+      let newParagraph = document.createElement("p");
+      newParagraph.innerHTML = "I am added by javaScript";
+      first.appendChild(newParagraph);
+
+      // add gift item
+      let item = document.getElementById("gift-item");
+      let newItem = document.createElement("li");
+      newItem.innerText = "Brand New gift";
+      item.appendChild(newItem);
+    </script>
+  </body>
+</html>

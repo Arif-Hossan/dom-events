@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handling</title>
+</head>
+
+<body>
+    <h1>Exploring events</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nemo beatae, facere deserunt dolore distinctio consequatur esse vel soluta iure accusantium voluptate. Odio placeat enim maxime perspiciatis impedit tenetur distinctio aspernatur unde officia, illo a eum maiores ad voluptates eaque!</p>
+    <button onmousemove="mouseMove()">Click me -1</button>
+    <button id="second">Click me -2</button>
+    <button id="third">Click me -3</button>
+    <button id="last">Click me -4</button>
+
+
+
+    <script>
+        function mouseMove() {
+            console.log("Someone over me");
+        }
+        let second=document.getElementById('second');
+        second.onclick=console.log("second button clicked");
+
+        function changeColor(){
+            document.body.style.backgroundColor="tomato";
+        }
+        let third=document.getElementById('third');
+        // third.onclick=changeColor;//calling a function does not need ()
+        third.addEventListener("click",changeColor)
+
+        document.getElementById('last').addEventListener('click',function(){
+            document.body.style.color="blue";
+        })
+
+    </script>
+</body>
+
+</html>

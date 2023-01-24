@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubble</title>
+  </head>
+  <style>
+    #container {
+      margin: 0 40%;
+    }
+  </style>
+  <body>
+    <!-- div#container>h1+ul#myList>li.item*5>lorem3 -->
+    <div id="container">
+      <h1>My list</h1>
+      <ul id="myList">
+        <li id="first" class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Esse, tempora numquam!</li>
+        <li class="item">Neque, harum laudantium?</li>
+        <li class="item">Vel, dolor quae!</li>
+        <li class="item">Cumque, cum dolores!</li>
+      </ul>
+
+      <button id="addNew">Add New Item</button>
+    </div>
+
+    <script>
+      // document.getElementById('first').addEventListener('click',function(){
+      //     console.log('first item clicked');
+      //     event.stopPropagation();//stop bubble up link events
+      // })
+      // document.getElementById('myList').addEventListener('click',function(){
+      //     console.log('List clicked')
+      // })
+      // document.getElementById('container').addEventListener('click',function(){
+      //     console.log('container clicked')
+      // })
+    //   let items = document.getElementsByClassName("item");
+    //   for (let i = 0; i < items.length; i++) {
+    //     let item = items[i];
+    //     item.addEventListener("click", function (event) {
+    //       // console.log(this,event.target);
+    //       event.target.parentNode.removeChild(event.target);
+    //     });
+    //   }
+      let newButton = document.getElementById("addNew");
+      newButton.addEventListener("click", function (events) {
+        let parentItem = document.getElementById("myList");
+        let newItem = document.createElement("li");
+        newItem.innerText = "Brand New Item";
+        parentItem.appendChild(newItem);
+      });
+
+      document.getElementById('myList').addEventListener('click',function(){
+        // console.log(this,event.target.innerText)
+        event.target.parentNode.removeChild(event.target);
+    })
+    </script>
+  </body>
+</html>
